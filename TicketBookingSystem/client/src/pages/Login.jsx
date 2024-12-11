@@ -1,13 +1,12 @@
 import React from "react";
 import Layout from "../components/Layout";
 
-function Home() {
+function Login() {
   return (
     <Layout>
-      <h1>Home Page</h1>
-      
+      <h1>Login Page</h1>
     </Layout>
   );
 }
 
-export default Home;
+export default Login;

@@ -1,10 +1,11 @@
 import "./App.css";
 import Layout from "./components/Layout";
+import PageRoutes from "./pages/PageRoutes";
 
 function App() {
   return (
     <div>
-      <Layout />
+      <PageRoutes />
     </div>
   );
 }

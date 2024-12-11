@@ -1,13 +1,12 @@
 import React from "react";
 import Layout from "../components/Layout";
 
-function Home() {
+function Register() {
   return (
     <Layout>
-      <h1>Home Page</h1>
-      
+      <h1>Register Page</h1>
     </Layout>
   );
 }
 
-export default Home;
+export default Register;
