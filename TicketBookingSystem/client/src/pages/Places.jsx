@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import axios from "axios";
 function Places() {
   const [placeName, setPlaceName] = useState("");
   const [placeDescription, setPlaceDescription] = useState("");
@@ -10,6 +11,14 @@ function Places() {
   function handleSubmit(event) {
     const formObj = { placeName, placeDescription, placeAddress, image };
     console.log(formObj);
+    axios
+      .post("http://localhost:8000/places/createPlace", formObj)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     event.preventDefault();
   }
   return (
