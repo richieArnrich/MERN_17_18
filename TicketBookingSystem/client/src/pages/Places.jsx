@@ -9,7 +9,7 @@ function Places() {
   const [image, setImage] = useState(null);
 
   function handleSubmit(event) {
-    const formObj = { placeName, placeDescription, placeAddress, image };
+    const formObj = { placeName, placeDescription, placeAddress };
     console.log(formObj);
     axios
       .post("http://localhost:8000/places/createPlace", formObj)
@@ -20,6 +20,21 @@ function Places() {
         console.log(err);
       });
     event.preventDefault();
+  }
+
+  function uploadPhoto() {
+    axios
+      .post(
+        "http://localhost:8000/places/upload",
+        { headers: { "Content-type": "multipart/form-data" } },
+        image
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
   return (
     <Layout>
@@ -80,6 +95,9 @@ function Places() {
               }
             }}
           />
+        </div>
+        <div>
+          <button onClick={uploadPhoto}>Upload Photo</button>
         </div>
         <div className="form-group d-flex justify-content-center">
           <input type="submit" className="btn btn-primary p-3 m-3" />

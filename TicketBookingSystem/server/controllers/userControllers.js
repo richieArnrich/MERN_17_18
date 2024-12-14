@@ -24,4 +24,5 @@ const getAllUsers = async (req, res) => {
   }
 };
 // export the controller
+
 module.exports = { createUser, getAllUsers };

@@ -4,6 +4,7 @@ import Home from "./Home";
 import Register from "./Register";
 import Login from "./Login";
 import Places from "./Places";
+import TicketBookPage from "./TicketBookPage";
 function PageRoutes() {
   return (
     <BrowserRouter>
@@ -12,6 +13,7 @@ function PageRoutes() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/places" element={<Places />} />
+        <Route path="/places/:id" element={<TicketBookPage />} />
       </Routes>
     </BrowserRouter>
   );
