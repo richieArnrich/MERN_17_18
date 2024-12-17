@@ -44,4 +44,12 @@ const getAllPlaces = async (req, res) => {
   }
 };
 
-module.exports = { createPlace, uploadPhoto, getAllPlaces };
+// get single place
+const getPlace = async (req, res) => {
+  const id = req.params.id;
+  const placeDoc = await place.findOne({ _id: id });
+  console.log(placeDoc);
+  res.json({ place: placeDoc });
+};
+
+module.exports = { createPlace, uploadPhoto, getAllPlaces, getPlace };

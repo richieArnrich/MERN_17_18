@@ -3,6 +3,7 @@ const {
   createPlace,
   uploadPhoto,
   getAllPlaces,
+  getPlace,
 } = require("../controllers/placeControllers");
 // const { upload } = require("../controllers/uploadMiddleware");
 // const multer = require("multer");
@@ -15,4 +16,5 @@ const router = express.Router();
 
 router.get("/getplaces", getAllPlaces);
 
+router.get("/getplace/:id", getPlace);
 module.exports = router;
